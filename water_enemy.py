@@ -24,11 +24,13 @@ class WaterEnemy:
             'block', 'stab']
             self.behaviorIndex = 0
             self.combatTuple = (0, 0, 'vulnerable')
+            # https://chierit.itch.io/elementals-water-priestess
             spritesheet = app.loadImage('./assets/waterSheet.png')
             self.icon = app.loadImage('./assets/water_priestess.png')
             xWidth = 288
             startX = 0
 
+            # https://pixabay.com/sound-effects/medieval-bell-d3-90290/
             self.deathSound = Sound('./assets/audio/deathAudio.mp3')
 
         elif level == 2:

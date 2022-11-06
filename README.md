@@ -48,7 +48,7 @@ Open source graphics:
 - [Game start sound](https://pixabay.com/sound-effects/medieval-bell-d3-90290/)
 - [Down](https://pixabay.com/sound-effects/swordraw-89023/)
 
-\\
+
 Music:
 - [Background music](https://xdeviruchi.itch.io/8-bit-fantasy-adventure-music-pack/download/eyJleHBpcmVzIjoxNjY3NzA3NDQzLCJpZCI6OTc1Mzg1fQ%3d%3d.zhEQyz1dlhGEl4rhKlun9jrlJEA%3d)
 

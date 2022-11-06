@@ -7,8 +7,8 @@ from sound import *
 # Citation ^ 9. Example: Animation with OOP
 class Player:
     def __init__(self, app):
-        self.hp = 100
-        self.maxHP = 100
+        self.hp = 130
+        self.maxHP = 130
         self.actions = {} 
         self.state = 'walk'
         self.startWalkIn = True
@@ -74,6 +74,7 @@ class Player:
             animation = cutSpritesheet(startX, xWidth*i, xWidth, startY, endY, 
             spritesheet, app)
             if i == 4:
+                # CHANGE FROM 100
                 (img, dmg, blockEff, vulnerability) = (animation, 25, 0, 
                 'vulnerable')
             elif i == 5:

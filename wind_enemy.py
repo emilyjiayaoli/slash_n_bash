@@ -31,6 +31,145 @@ class WindEnemy:
 
             self.deathSound = Sound('./assets/audio/deathAudio.mp3')
 
+        if level == 2:
+            self.hp = 140
+            self.maxHP = 140
+            self.state = 'walk'
+            self.walkX = 0
+            self.moveDeath = 0
+            self.timeAfterDeath = 0
+            self.callNextLevel = False
+
+            self.behavior = ['block','block','block','block','block',
+            'slash','slash','block','block','block','air','idle','idle','idle',
+            'block','block','spec']
+
+
+
+            self.behaviorIndex = 0
+            self.combatTuple = (0, 0, 'vulnerable')
+            spritesheet = app.loadImage('./assets/windSheet.png')
+            self.icon = app.loadImage('./assets/wind_hashashin.png')
+            xWidth = 288
+            startX = 0
+
+            self.deathSound = Sound('./assets/audio/deathAudio.mp3')
+
+        if level == 3:
+            self.hp = 160
+            self.maxHP = 160
+            self.state = 'walk'
+            self.walkX = 0
+            self.moveDeath = 0
+            self.timeAfterDeath = 0
+            self.callNextLevel = False
+
+            self.behavior = ['block','block','spec','block','block','block',
+            'slash','slash','block','block','spec','block',
+            'air','idle','idle','idle',
+            'block','block','spec']
+
+
+
+            self.behaviorIndex = 0
+            self.combatTuple = (0, 0, 'vulnerable')
+            spritesheet = app.loadImage('./assets/windSheet.png')
+            self.icon = app.loadImage('./assets/wind_hashashin.png')
+            xWidth = 288
+            startX = 0
+
+            self.deathSound = Sound('./assets/audio/deathAudio.mp3')
+
+
+        # Load special attack
+        self.spec = []
+        for i in range(5):
+            (startY, endY) = getYs(9)
+            animation = cutEnemySheet(startX, xWidth*i, xWidth, startY, 
+            endY, spritesheet, app)
+            (img, dmg, blockEff, vulnerability) = (animation, 0, 0, 
+                'vulnerable')
+            self.spec.append((img, dmg, blockEff, vulnerability))
+        for i in range(5,10):
+            (startY, endY) = getYs(9)
+            animation = cutEnemySheet(startX, xWidth*i, xWidth, startY, 
+            endY, spritesheet, app)
+            (img, dmg, blockEff, vulnerability) = (animation, 0, 1, 
+                'invulnerable')
+            self.spec.append((img, dmg, blockEff, vulnerability))
+        for i in range(10,11):
+            (startY, endY) = getYs(9)
+            animation = cutEnemySheet(startX, xWidth*i, xWidth, startY, 
+            endY, spritesheet, app)
+            (img, dmg, blockEff, vulnerability) = (animation, 0, 0, 
+                'vulnerable')
+            self.spec.append((img, dmg, blockEff, vulnerability))
+        for i in range(11,12):
+            (startY, endY) = getYs(9)
+            animation = cutEnemySheet(startX, xWidth*i, xWidth, startY, 
+            endY, spritesheet, app)
+            (img, dmg, blockEff, vulnerability) = (animation, 8, 0, 
+                'vulnerable')
+            self.spec.append((img, dmg, blockEff, vulnerability))
+        for i in range(12,16):
+            (startY, endY) = getYs(9)
+            animation = cutEnemySheet(startX, xWidth*i, xWidth, startY, 
+            endY, spritesheet, app)
+            (img, dmg, blockEff, vulnerability) = (animation, 0, 1, 
+                'invulnerable')
+            self.spec.append((img, dmg, blockEff, vulnerability))
+        for i in range(16, 17):
+            (startY, endY) = getYs(9)
+            animation = cutEnemySheet(startX, xWidth*i, xWidth, startY, 
+            endY, spritesheet, app)
+            (img, dmg, blockEff, vulnerability) = (animation, 0, 0, 
+                'vulnerable')
+            self.spec.append((img, dmg, blockEff, vulnerability))
+        for i in range(17,18):
+            (startY, endY) = getYs(9)
+            animation = cutEnemySheet(startX, xWidth*i, xWidth, startY, 
+            endY, spritesheet, app)
+            (img, dmg, blockEff, vulnerability) = (animation, 8, 0, 
+                'vulnerable')
+            self.spec.append((img, dmg, blockEff, vulnerability))
+        for i in range(18,19):
+            (startY, endY) = getYs(9)
+            animation = cutEnemySheet(startX, xWidth*i, xWidth, startY, 
+            endY, spritesheet, app)
+            (img, dmg, blockEff, vulnerability) = (animation, 0, 1, 
+                'invulnerable')
+            self.spec.append((img, dmg, blockEff, vulnerability))
+        for i in range(19,20):
+            (startY, endY) = getYs(9)
+            animation = cutEnemySheet(startX, xWidth*i, xWidth, startY, 
+            endY, spritesheet, app)
+            (img, dmg, blockEff, vulnerability) = (animation, 8, 0, 
+                'invulnerable')
+            self.spec.append((img, dmg, blockEff, vulnerability))
+        for i in range(20,24):
+            (startY, endY) = getYs(9)
+            animation = cutEnemySheet(startX, xWidth*i, xWidth, startY, 
+            endY, spritesheet, app)
+            (img, dmg, blockEff, vulnerability) = (animation, 0, 0, 
+                'vulnerable')
+            self.spec.append((img, dmg, blockEff, vulnerability))
+        for i in range(24,29):
+            (startY, endY) = getYs(9)
+            animation = cutEnemySheet(startX, xWidth*i, xWidth, startY, 
+            endY, spritesheet, app)
+            (img, dmg, blockEff, vulnerability) = (animation, 0, 1, 
+                'invulnerable')
+            self.spec.append((img, dmg, blockEff, vulnerability))
+        for i in range(29,30):
+            (startY, endY) = getYs(9)
+            animation = cutEnemySheet(startX, xWidth*i, xWidth, startY, 
+            endY, spritesheet, app)
+            (img, dmg, blockEff, vulnerability) = (animation, 0, 0, 
+                'vulnerable')
+            self.spec.append((img, dmg, blockEff, vulnerability))
+
+
+
         # Load idle animation
         self.idle = []
         for i in range(8):
@@ -172,6 +311,8 @@ class WindEnemy:
             animation = self.hit[self.animationCounter][0]
         elif self.state == 'walk':
             animation = self.walk[self.animationCounter][0]
+        elif self.state == 'spec':
+            animation = self.spec[self.animationCounter][0]
         else:
             animation = self.idle[self.animationCounter][0]
             
@@ -209,6 +350,14 @@ class WindEnemy:
             self.animationCounter = (1 + self.animationCounter)
 
             if self.animationCounter >= len(self.air):
+                self.animationCounter = 0
+                self.changeBehavior()
+        
+        elif self.state == 'spec':
+            self.combatTuple = createCombatTuple(self.spec[self.animationCounter])
+            self.animationCounter = (1 + self.animationCounter)
+
+            if self.animationCounter >= len(self.spec):
                 self.animationCounter = 0
                 self.changeBehavior()
 

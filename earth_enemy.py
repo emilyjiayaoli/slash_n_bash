@@ -10,7 +10,7 @@ class EarthEnemy:
     def __init__(self, app, level):
         self.level = level
         self.animationCounter = 0
-
+ 
         if level == 1:
             self.hp = 120
             self.maxHP = 120     
@@ -19,16 +19,16 @@ class EarthEnemy:
             self.moveDeath = 0
             self.timeAfterDeath = 0
             self.callNextLevel = False
-
+ 
             self.behavior = ['idle', 'kick', 'block', 'punch', 'idle', 'kick',
-            'punch', 'punch', 'idle', 'defend', 'combo']
+            'punch', 'punch', 'idle', 'block', 'combo']
             self.behaviorIndex = 0
             self.combatTuple = (0, 0, 'vulnerable')
             spritesheet = app.loadImage('./assets/earthSheet.png')
             self.icon = app.loadImage('./assets/ground_monk.png')
             xWidth = 288
             startX = 0
-
+ 
             self.deathSound = Sound('./assets/audio/deathAudio.mp3')
         
         elif level == 2:
@@ -51,9 +51,51 @@ class EarthEnemy:
 
             self.deathSound = Sound('./assets/audio/deathAudio.mp3')
 
+        if level == 2:
+            self.hp = 140
+            self.maxHP = 140   
+            self.state = 'walk'
+            self.walkX = 0
+            self.moveDeath = 0
+            self.timeAfterDeath = 0
+            self.callNextLevel = False
+ 
+            self.behavior = ['block','block','idle','block','punch', 'kick', 
+            'block', 'punch', 'idle', 'kick',
+            'punch', 'punch', 'idle', 'block', 'combo']
+            self.behaviorIndex = 0
+            self.combatTuple = (0, 0, 'vulnerable')
+            spritesheet = app.loadImage('./assets/earthSheet.png')
+            self.icon = app.loadImage('./assets/ground_monk.png')
+            xWidth = 288
+            startX = 0
+ 
+            self.deathSound = Sound('./assets/audio/deathAudio.mp3')
+ 
+        if level == 3:
+            self.hp = 200
+            self.maxHP = 200  
+            self.state = 'walk'
+            self.walkX = 0
+            self.moveDeath = 0
+            self.timeAfterDeath = 0
+            self.callNextLevel = False
+ 
+            self.behavior = ['block','block','block','block','punch', 'kick', 
+            'block', 'punch', 'idle', 'kick',
+            'punch', 'punch', 'idle', 'block', 'combo','block','idle','idle']
+            self.behaviorIndex = 0
+            self.combatTuple = (0, 0, 'vulnerable')
+            spritesheet = app.loadImage('./assets/earthSheet.png')
+            self.icon = app.loadImage('./assets/ground_monk.png')
+            xWidth = 288
+            startX = 0
+ 
+            self.deathSound = Sound('./assets/audio/deathAudio.mp3')
+ 
         # Load idle animation
         self.idle = []
-        for i in range(5):
+        for i in range(6):
             (startY, endY) = getYs(0)
             animation = cutEnemySheet(startX, xWidth*i, xWidth, startY, 
             endY, spritesheet, app)
@@ -83,10 +125,10 @@ class EarthEnemy:
             elif i == 3:
                 (img, dmg, blockEff, vulnerability) = (animation, 15, 0, 
                 'vulnerable')
-            elif i in [4, 5]:
+            elif i == 4:
                 (img, dmg, blockEff, vulnerability) = (animation, 0, 1, 
                 'invulnerable')
-            elif i == 6:
+            elif i == 5:
                 (img, dmg, blockEff, vulnerability) = (animation, 0, 0, 
                 'vulnerable')
             self.kick.append((img, dmg, blockEff, vulnerability))
@@ -155,11 +197,11 @@ class EarthEnemy:
 
         # Load block
         self.block = []
-        for i in range(11):
-            (startY, endY) = getYs(10)
+        for i in range(12):
+            (startY, endY) = getYs(11)
             animation = cutEnemySheet(startX, xWidth*i, xWidth, startY, 
             endY, spritesheet, app)
-            if i in [0, 1, 10, 11, 12]:
+            if i in [0, 1, 10, 11]:
                 (img, dmg, blockEff, vulnerability) = (animation, 0, 0, 
                 'vulnerable')
             else:

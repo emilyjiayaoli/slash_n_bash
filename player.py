@@ -12,6 +12,7 @@ class Player:
         self.actions = {} 
         self.state = 'walk'
         self.startWalkIn = True
+        self.walkCycles = 0
         self.animationCounter = 0
         self.timeAfterDeath = 0
         self.walkX = 0
@@ -191,7 +192,15 @@ class Player:
                 self.state = 'idle'
     
         elif self.state == 'walk' and self.startWalkIn != True:
-            pass
+            self.combatTuple = createCombatTuple(self.walk[self.animationCounter])
+            if self.animationCounter == len(self.walk) - 1:
+                self.walkCycles += 1
+            self.animationCounter = ((1 + self.animationCounter) % 
+            len(self.walk))
+            if self.walkCycles >= 5:
+                self.walkCycles = 0
+                self.state = 'idle'
+            
 
         elif self.state == 'hit':
             self.combatTuple = createCombatTuple(self.hit[self.animationCounter])

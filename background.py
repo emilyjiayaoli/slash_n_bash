@@ -7,8 +7,12 @@ class Background:
         self.image = app.scaleImage(self.image, 1/2)
         self.imgWidth, self.imgHeight = self.image.size
         self.boolScroll = False
+        self.scrollingCount = 0
         self.scrollProg = 0
         self.scrollAmt = 0
+
+    def transition(self, app):
+        self.boolScroll = True
 
     def scroll(self, app):
         self.scrollProg += .01
@@ -17,8 +21,12 @@ class Background:
             self.scrollProg -= 1
 
     def timerFired(self, app):
-        if self.boolScroll:
+        if self.boolScroll and self.scrollingCount < 40:
             self.scroll(app)
+            self.scrollingCount += 1
+        elif self.scrollingCount >= 40:
+            self.boolScroll = False
+            self.scrollingCount = 0
 
     def redraw(self, app, canvas):
         canvas.create_image(0 - self.scrollAmt,0,image=ImageTk.PhotoImage(self.image), 

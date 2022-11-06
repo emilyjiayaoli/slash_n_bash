@@ -48,6 +48,17 @@ def mainGame_timerFired(app):
         if app.windLvl1.callNextLevel == True:
             app.currentLevel += 1
             app.player.hp = app.player.maxHP
+            app.background.transition(app)
+            app.player.state = 'walk'
+    
+    if app.currentLevel == 1:
+        app.earthLvl1.timerFired(app)
+        if app.player.state != 'death':
+            checkInteractions(app.player, app.earthLvl1)
+    
+        if app.earthLvl1.callNextLevel == True:
+            app.currentLevel += 1
+            app.player.hp = app.player.maxHP
 
     if app.player.callGameOver:
         app.mainMusic.stop()
@@ -63,6 +74,8 @@ def mainGame_redrawAll(app, canvas):
 
     if app.currentLevel == 0:
         app.windLvl1.redraw(app, canvas)
+    elif app.currentLevel == 1:
+        app.earthLvl1.redraw(app, canvas)
 
 # Start Screen
 

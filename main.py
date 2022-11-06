@@ -23,6 +23,7 @@ def appStarted(app):
     # https://stackoverflow.com/questions/22227684/pygame-error-mixer-system-not-initialized
     # Not initialized error fix citation
     pygame.mixer.init()
+    # https://xdeviruchi.itch.io/8-bit-fantasy-adventure-music-pack
     app.mainMusic = Sound('./assets/audio/backgroundMusic.mp3')
     app.startMusic = Sound('./assets/audio/startAudio.mp3')
     app.endMusic = Sound('./assets/audio/endAudio.mp3')

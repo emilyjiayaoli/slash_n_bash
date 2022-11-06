@@ -19,6 +19,7 @@ def checkInteractions(player, enemy):
         isHit(enemy)
     elif isAttacking(player) and enemy.combatTuple[2] == 'counterhit':
         player.hp -= 5
+        isHit(player)
     if isAttacking(enemy) and isVulnerable(player):
         dmg = enemy.combatTuple[0]
         player.hp -= dmg

@@ -7,8 +7,8 @@ from sound import *
 # Citation ^ 9. Example: Animation with OOP
 class Player:
     def __init__(self, app):
-        self.hp = 130
-        self.maxHP = 130
+        self.hp = 120
+        self.maxHP = 120
         self.actions = {} 
         self.state = 'walk'
         self.startWalkIn = True
@@ -18,12 +18,16 @@ class Player:
         self.walkX = 0
         self.combatTuple = (0, 0, 'vulnerable')
         self.callGameOver = False
+        # https://chierit.itch.io/elementals-fire-knight
+
         spritesheet = app.loadImage('./assets/playerSheet.png')
         self.icon = app.loadImage('./assets/fire_knight.png')
 
         # Load sounds
+        # https://olexmazur.itch.io/fantasy-card-game
         self.downAudio = Sound('./assets/audio/downAudio.mp3')
         self.sideAudio = Sound('./assets/audio/slashAudio.mp3')
+        # https://pixabay.com/sound-effects/opening-beer-can-6336/
         self.blockAudio = Sound('./assets/audio/blockAudio.mp3')
 
         # https://chierit.itch.io/elementals-fire-knight
@@ -250,6 +254,3 @@ class Player:
             self.blockAudio.start(1)
             self.state = 'block'
             self.animationCounter = 0
-
-# Block auto releases after key pressed on Macbook Pro 16 (M1), but works on 
-# Macbook Pro 16 non M1

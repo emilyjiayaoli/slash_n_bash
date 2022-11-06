@@ -24,11 +24,12 @@ class WindEnemy:
             'block', 'slash', 'block', 'air']
             self.behaviorIndex = 0
             self.combatTuple = (0, 0, 'vulnerable')
+            # https://chierit.itch.io/elementals-wind-hashashin
             spritesheet = app.loadImage('./assets/windSheet.png')
             self.icon = app.loadImage('./assets/wind_hashashin.png')
             xWidth = 288
             startX = 0
-
+            # https://pixabay.com/sound-effects/medieval-bell-d3-90290/
             self.deathSound = Sound('./assets/audio/deathAudio.mp3')
 
         if level == 2:
@@ -195,7 +196,7 @@ class WindEnemy:
             (startY, endY) = getYs(6)
             animation = cutEnemySheet(startX, xWidth*i, xWidth, startY, 
             endY, spritesheet, app)
-            (img, dmg, blockEff, vulnerability) = (animation, 3, 0, 
+            (img, dmg, blockEff, vulnerability) = (animation, 6, 0, 
                 'vulnerable')
             self.slash.append((img, dmg, blockEff, vulnerability))
 
@@ -214,7 +215,7 @@ class WindEnemy:
             (startY, endY) = getYs(7)
             animation = cutEnemySheet(startX, xWidth*i, xWidth, startY, 
             endY, spritesheet, app)
-            (img, dmg, blockEff, vulnerability) = (animation, 2, 0, 
+            (img, dmg, blockEff, vulnerability) = (animation, 3, 0, 
                 'vulnerable')
             self.air.append((img, dmg, blockEff, vulnerability)) 
         # Load reset

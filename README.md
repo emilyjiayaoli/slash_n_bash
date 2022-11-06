@@ -19,9 +19,11 @@ pip install pygame
 
 - Make sure tikinter is downloaded from cmu_112_graphics.py on the [CMU 15-112 website](https://www.cs.cmu.edu/~112/notes/notes-graphics.html#installingModules).
 ```
+# For macs
 import sys
 print(f"sudo '{sys.executable}' -m pip install pillow")
 print(f"sudo '{sys.executable}' -m pip install requests")
+# Refer to link above for compatibilities on other machines
 ```
 
 - Run run.py
@@ -36,9 +38,12 @@ pip install pygame
 ```
 - Make sure tikinter is downloaded from cmu_112_graphics.py on the [CMU 15-112 website](https://www.cs.cmu.edu/~112/notes/notes-graphics.html#installingModules).
 ```
+# For macs
 import sys
 print(f"sudo '{sys.executable}' -m pip install pillow")
 print(f"sudo '{sys.executable}' -m pip install requests")
+
+# Refer to link above for compatibilities on other machines
 ```
 
 **Citations**

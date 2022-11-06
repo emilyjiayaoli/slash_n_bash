@@ -23,7 +23,7 @@ def checkGestures(gestures, slash, block, down, img):
     # if so, call the corresponding keypressed using pyautogui 
     if gestures.isDown():
         down += 1
-        if down >= 3:
+        if down >= 2:
             p.press("s")
             # cv2.putText(img,"Down!", (500, 500), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1)
             # #cv2.putText(img,"Selected",(int(0.85*img_w), int(0.1*img_h)),cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1)
@@ -31,13 +31,13 @@ def checkGestures(gestures, slash, block, down, img):
             print("Down!")
     elif gestures.isSide():
         slash += 1
-        if slash >= 3:
+        if slash >= 2:
             p.press("d")
             slash = 0
             print("Side Slash!")
     elif gestures.isBlock():
         block += 1
-        if block >= 2:
+        if block >= 1:
             p.press("a")
             block = 0
             print("Block!!")

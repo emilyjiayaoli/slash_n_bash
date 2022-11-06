@@ -30,7 +30,7 @@ python3 run.py
 
 **Citations**
 Open source graphics:
-[Player] (slash https://pixabay.com/sound-effects/sword-and-shealt-27397/)
+[Player slash] (https://pixabay.com/sound-effects/sword-and-shealt-27397/)
 [Block hit] (https://pixabay.com/sound-effects/swordbattle2-56044/)
 [Game start sound] (https://pixabay.com/sound-effects/medieval-bell-d3-90290/)
 [Down] (https://pixabay.com/sound-effects/swordraw-89023/)

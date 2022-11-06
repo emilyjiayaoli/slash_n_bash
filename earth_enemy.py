@@ -30,6 +30,26 @@ class EarthEnemy:
             startX = 0
 
             self.deathSound = Sound('./assets/audio/deathAudio.mp3')
+        
+        elif level == 2:
+            self.hp = 160
+            self.maxHP = 160     
+            self.state = 'walk'
+            self.walkX = 0
+            self.moveDeath = 0
+            self.timeAfterDeath = 0
+            self.callNextLevel = False
+
+            self.behavior = ['idle', 'punch', 'kick', 'combo', 'punch', 'block', 'idle',
+            'punch', 'punch', 'idle', 'defend', 'combo', 'block']
+            self.behaviorIndex = 0
+            self.combatTuple = (0, 0, 'vulnerable')
+            spritesheet = app.loadImage('./assets/earthSheet.png')
+            self.icon = app.loadImage('./assets/ground_monk.png')
+            xWidth = 288
+            startX = 0
+
+            self.deathSound = Sound('./assets/audio/deathAudio.mp3')
 
         # Load idle animation
         self.idle = []

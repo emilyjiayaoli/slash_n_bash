@@ -24,31 +24,12 @@ class EarthEnemy:
             'punch', 'punch', 'idle', 'block', 'combo']
             self.behaviorIndex = 0
             self.combatTuple = (0, 0, 'vulnerable')
+            # https://chierit.itch.io/elementals-ground-monk
             spritesheet = app.loadImage('./assets/earthSheet.png')
             self.icon = app.loadImage('./assets/ground_monk.png')
             xWidth = 288
             startX = 0
- 
-            self.deathSound = Sound('./assets/audio/deathAudio.mp3')
-        
-        elif level == 2:
-            self.hp = 160
-            self.maxHP = 160     
-            self.state = 'walk'
-            self.walkX = 0
-            self.moveDeath = 0
-            self.timeAfterDeath = 0
-            self.callNextLevel = False
-
-            self.behavior = ['idle', 'punch', 'kick', 'combo', 'punch', 'block', 'idle',
-            'punch', 'punch', 'idle', 'defend', 'combo', 'block']
-            self.behaviorIndex = 0
-            self.combatTuple = (0, 0, 'vulnerable')
-            spritesheet = app.loadImage('./assets/earthSheet.png')
-            self.icon = app.loadImage('./assets/ground_monk.png')
-            xWidth = 288
-            startX = 0
-
+            # https://pixabay.com/sound-effects/medieval-bell-d3-90290/
             self.deathSound = Sound('./assets/audio/deathAudio.mp3')
 
         if level == 2:

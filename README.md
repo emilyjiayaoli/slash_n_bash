@@ -1,3 +1,9 @@
+**Demo**
+![](./images/game_ex1.png)
+![](./images/game_ex2.png)
+![](./images/game_ex3.png)
+![](./images/cv_ex1.png)
+
 **Set Up and Run Instructions (computer vision control enabled)**
 
 Create, set up new virtual environment

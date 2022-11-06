@@ -1,8 +1,6 @@
 !/usr/bin/env bash
 
-
-
-
+# Depreciated
 echo "Finished setting up the virtual environment!"
 
 pip install opencv-python

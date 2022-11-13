@@ -1,3 +1,8 @@
+**Welcome**
+Slash n Bash is a boss fight game where the controls are your body movements - a slash in real life translates to a slash in game, a giant down attack in real life is a giant down attack in the game. Wield a literal sword to play.
+
+Slash n Bash comes to life with real-time computer vision pose estimation, efficiency optimized animations, and customizable fighting algorithm.
+
 **Demo**
 ![](./images/game_ex1.png)
 ![](./images/game_ex2.png)

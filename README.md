@@ -52,6 +52,11 @@ print(f"sudo '{sys.executable}' -m pip install requests")
 # Refer to link above for compatibilities on other machines
 ```
 
+- Run main.py
+```
+python3 main.py
+```
+
 **Citations**
 
 
